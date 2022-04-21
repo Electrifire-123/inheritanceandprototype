@@ -67,12 +67,24 @@ arr2.sum(array);
 arr2.sum(array2);
 
 // Q4. Write a JavaScript function to retrieve all the names of object's own and inherited properties.
-function namesOfObject(){
-    const keys = Object.keys(child);
-    console.log(keys);
-  }
-  namesOfObject();
+const SuperHero = {//class expression
+    details(fName,lName,birthYear){
+        this.fName = fName;
+        this.lName = lName;
+        this.birthYear = birthYear;
+    }
+}
 
+let wWomen = Object.create(SuperHero);
+wWomen.details("Wonder","Women",1948);
+wWomen.gender = "Female";
+
+function nameOfProperty(){
+    const allNames = Object.keys(wWomen);
+    console.log(allNames)
+}
+
+nameOfProperty();
 
 
 
